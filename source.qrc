@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>images/Products/1.jpg</file>
+    <file>images/Products/2.jpg</file>
+    <file>images/Products/3.jpg</file>
+    <file>images/Products/4.jpg</file>
+    <file>images/Products/5.jpg</file>
+    <file>images/Products/6.jpg</file>
+    <file>images/Products/7.jpg</file>
+    <file>images/Products/8.jpg</file>
+    <file>images/Products/9.jpg</file>
+    <file>images/Products/10.jpg</file>
+    <file>images/Products/11.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>images/Icons/Icon_exit.jpg</file>
+    <file>images/Icons/Icon_chart.png</file>
+    <file>images/Icons/Icon_checkOut.png</file>
+    <file>images/Icons/Insert_goods.png</file>
+    <file>images/Icons/Icon_order.png</file>
+  </qresource>
+</RCC>

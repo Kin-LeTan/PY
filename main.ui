@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1442</width>
+    <height>824</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="menu_icon" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>121</width>
+      <height>781</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_12">
+     <item>
+      <widget class="QPushButton" name="menu_nhap">
+       <property name="text">
+        <string>Kho</string>
+       </property>
+       <property name="icon">
+        <iconset resource="source.qrc">
+         <normaloff>:/newPrefix/images/Icons/Insert_goods.png</normaloff>:/newPrefix/images/Icons/Insert_goods.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="menu_thanh_toan">
+       <property name="text">
+        <string>Thanh toan</string>
+       </property>
+       <property name="icon">
+        <iconset resource="source.qrc">
+         <normaloff>:/newPrefix/images/Icons/Icon_checkOut.png</normaloff>:/newPrefix/images/Icons/Icon_checkOut.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_19">
+       <item>
+        <widget class="QPushButton" name="menu_thong_ke">
+         <property name="text">
+          <string>Đơn</string>
+         </property>
+         <property name="icon">
+          <iconset resource="source.qrc">
+           <normaloff>:/newPrefix/images/Icons/Icon_order.png</normaloff>:/newPrefix/images/Icons/Icon_order.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>90</width>
+           <height>25</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exit">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="source.qrc">
+           <normaloff>:/newPrefix/images/Icons/Icon_exit.jpg</normaloff>:/newPrefix/images/Icons/Icon_exit.jpg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>78</width>
+           <height>35</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="menu_layout" native="true">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>0</y>
+      <width>1221</width>
+      <height>751</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1100</width>
+      <height>0</height>
+     </size>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_20">
+     <item>
+      <widget class="QWidget" name="widget_search_2" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_19">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_25">
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboBox"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_26">
+            <item>
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedMenuItem">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page1">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1175</width>
+              <height>527</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_22">
+             <item>
+              <widget class="QWidget" name="item_M1" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>130</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_29">
+                <item>
+                 <widget class="QLabel" name="item_image_M1">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">image: url(:/newPrefix/images/Products/1.jpg);</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_16" native="true">
+                  <layout class="QVBoxLayout" name="verticalLayout_23">
+                   <item>
+                    <widget class="QLabel" name="item_name_M1">
+                     <property name="text">
+                      <string>Gói kẹo</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="item_id_M1">
+                     <property name="text">
+                      <string>ID: IPD738</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="item_price_M1">
+                     <property name="text">
+                      <string>Giá: 999.999.999 VNDf</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="item_quantity_RM_M1">
+                     <property name="text">
+                      <string>Số lượng còn: </string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpace">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>448</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_17" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>250</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_24">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_30">
+                     <item>
+                      <widget class="QLabel" name="item_label_M1">
+                       <property name="text">
+                        <string>Nhập số lượng:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="item_quantity_input_M1"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_31">
+                     <item>
+                      <widget class="QPushButton" name="item_btn_add_M1">
+                       <property name="text">
+                        <string>Add quantity</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="item_btn_barring_M1">
+                       <property name="text">
+                        <string>Barring quantity</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout">
+                  <item>
+                   <widget class="QPushButton" name="item_btn_edit_M1">
+                    <property name="text">
+                     <string>EDIT</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="item_btn_delete_M1">
+                    <property name="text">
+                     <string>DELETE</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>110</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>110</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_28">
+            <item>
+             <widget class="QPushButton" name="form_selectImage_M1">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_3" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>0</height>
+               </size>
+              </property>
+              <layout class="QFormLayout" name="formLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>Tên:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="form_name_M1"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>Giá:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="form_price_M1"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>Số lượng:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="form_quantity_M1"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>448</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="form_btn_add_M1">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>80</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>ADD</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page2">
+        <layout class="QVBoxLayout" name="verticalLayout_33">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_38">
+           <item>
+            <widget class="QScrollArea" name="scrollArea_5">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_5">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>666</width>
+                <height>608</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_26">
+               <item>
+                <widget class="QWidget" name="item_M2" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>130</height>
+                  </size>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_32">
+                  <item>
+                   <widget class="QLabel" name="item_image_M2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>100</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>100</width>
+                      <height>100</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">image: url(:/newPrefix/images/Products/1.jpg);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_20" native="true">
+                    <layout class="QVBoxLayout" name="verticalLayout_27">
+                     <item>
+                      <widget class="QLabel" name="item_name_M2">
+                       <property name="text">
+                        <string>Gói kẹodddddddd</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="item_id_M2">
+                       <property name="text">
+                        <string>ID: IPD738</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="item_price_M2">
+                       <property name="text">
+                        <string>Giá: 999.999.999 VNDf</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="item_quantity_RM_M2">
+                       <property name="text">
+                        <string>Số lượng còn: </string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_21">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>448</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_21" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>250</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_28">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_33">
+                       <item>
+                        <widget class="QLabel" name="item_label_M2">
+                         <property name="text">
+                          <string>Nhập số lượng:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSpinBox" name="item_quantity_input_M2"/>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_34">
+                       <item>
+                        <widget class="QPushButton" name="item_btn_add_M2">
+                         <property name="text">
+                          <string>TO CART &gt;&gt;&gt;</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="scrollArea_2">
+             <property name="minimumSize">
+              <size>
+               <width>310</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>500</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>525</width>
+                <height>587</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QWidget" name="cart" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>230</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_29">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_37">
+                    <item>
+                     <widget class="QLabel" name="cart_image_M2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>100</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>100</width>
+                        <height>100</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">image: url(:/newPrefix/images/Products/1.jpg);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QWidget" name="widget_22" native="true">
+                      <layout class="QVBoxLayout" name="verticalLayout_30">
+                       <item>
+                        <widget class="QLabel" name="cart_name_M2">
+                         <property name="text">
+                          <string>Gói kẹodddddddddddddddddddddddddddddddddddddddddddđ</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="cart_id_M2">
+                         <property name="text">
+                          <string>ID: IPD738</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="cart_price_M2">
+                         <property name="text">
+                          <string>Giá: 999.999.999 VNDf</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_23" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>200</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_32">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_35">
+                       <item>
+                        <widget class="QLabel" name="item_label_M1_4">
+                         <property name="text">
+                          <string>Nhập số lượng:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSpinBox" name="cart_quantity_input_M2"/>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_36">
+                       <item>
+                        <widget class="QPushButton" name="cart_btn_remove_M2">
+                         <property name="text">
+                          <string>&lt;&lt;&lt; REMOVE</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="cart_btn_cancel_M2">
+                         <property name="text">
+                          <string>CANCEL</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_8">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="total_M2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>15</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>TỐNG TIỀN: 999.999.999 VND</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_39">
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="cart_btn_cancelAll_M2">
+             <property name="text">
+              <string>CANCEL ALL CARTS</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_checkOut_M2">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>44</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>THANH TOÁN</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page3">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QScrollArea" name="scroll_order">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scroll_orderWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1175</width>
+              <height>644</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QWidget" name="item_M3" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>200</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>1678878</width>
+                 <height>220</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_5">
+                  <item>
+                   <widget class="QLabel" name="label_id_don_M3">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                      <weight>50</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                      <underline>false</underline>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>ID ĐƠN: 1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_tiem_M3">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                      <weight>50</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                      <underline>false</underline>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>THỜI GIAN ĐÃ TẠO: </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_tong_hang_M3">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                      <weight>50</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                      <underline>false</underline>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>TỔNG MÓN HÀNG: 10</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_toal_M3">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                      <weight>50</weight>
+                      <italic>false</italic>
+                      <bold>false</bold>
+                      <underline>false</underline>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>TỔNG TIỀN: 88,777,888 VND</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <widget class="QLabel" name="label_list">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>DANH SÁCH CÁC MÓN HÀNG:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QScrollArea" name="scroll_goods">
+                    <property name="minimumSize">
+                     <size>
+                      <width>700</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="widgetResizable">
+                     <bool>true</bool>
+                    </property>
+                    <widget class="QWidget" name="scroll_goodsWidgetContents">
+                     <property name="geometry">
+                      <rect>
+                       <x>0</x>
+                       <y>0</y>
+                       <width>698</width>
+                       <height>166</height>
+                      </rect>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_21">
+                      <item>
+                       <widget class="QWidget" name="item_goods_M3" native="true">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>83</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>83</height>
+                         </size>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_11">
+                         <item>
+                          <widget class="QLabel" name="label_img_M3">
+                           <property name="minimumSize">
+                            <size>
+                             <width>70</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>70</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">image: url(:/newPrefix/images/Products/2.jpg);</string>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <layout class="QVBoxLayout" name="verticalLayout_25">
+                           <item>
+                            <widget class="QLabel" name="label_name_goods_M3">
+                             <property name="text">
+                              <string>Tên: </string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_9">
+                             <item>
+                              <widget class="QLabel" name="label_gia_goods_M3">
+                               <property name="text">
+                                <string>Giá: </string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLabel" name="label_quantity_goods_M3">
+                               <property name="text">
+                                <string>Sô lượng: </string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QLabel" name="label_tongTien_goods_M3">
+                               <property name="text">
+                                <string>Tổng tiền: </string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <spacer name="horizontalSpacer_12">
+                           <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                           </property>
+                           <property name="sizeHint" stdset="0">
+                            <size>
+                             <width>40</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                          </spacer>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="verticalSpacer_3">
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>20</width>
+                          <height>51</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                     </layout>
+                    </widget>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget_25" native="true">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>730</y>
+      <width>77</width>
+      <height>38</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1442</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="source.qrc"/>
+ </resources>
+ <connections/>
+</ui>
