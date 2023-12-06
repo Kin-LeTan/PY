@@ -98,8 +98,8 @@
      <rect>
       <x>130</x>
       <y>0</y>
-      <width>1221</width>
-      <height>751</height>
+      <width>1129</width>
+      <height>771</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -110,69 +110,69 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_20">
      <item>
-      <widget class="QWidget" name="widget_search_2" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_19">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_24">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_25">
-            <item>
-             <spacer name="horizontalSpacer_6">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox"/>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEdit_2"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_26">
-            <item>
-             <widget class="QPushButton" name="pushButton_4">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_7">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
       <widget class="QStackedWidget" name="stackedMenuItem">
        <property name="currentIndex">
         <number>0</number>
        </property>
        <widget class="QWidget" name="page1">
         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QWidget" name="widget_search_2" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_19">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_25">
+                <item>
+                 <spacer name="horizontalSpacer_6">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBox"/>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit_2"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_26">
+                <item>
+                 <widget class="QPushButton" name="pushButton_4">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_7">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
          <item>
           <widget class="QScrollArea" name="scrollArea">
            <property name="minimumSize">
@@ -195,8 +195,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>1175</width>
-              <height>527</height>
+              <width>1083</width>
+              <height>547</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -380,19 +380,49 @@
              <height>110</height>
             </size>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_28">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QPushButton" name="form_selectImage_M1">
+             <widget class="QLabel" name="item_image_M1_2">
               <property name="minimumSize">
                <size>
                 <width>100</width>
                 <height>100</height>
                </size>
               </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(:/newPrefix/images/Products/1.jpg);</string>
+              </property>
               <property name="text">
                <string/>
               </property>
              </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QPushButton" name="form_select_img_M1">
+                <property name="text">
+                 <string>Chọn ảnh</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Tên ảnh:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="form_name_img_M1"/>
+              </item>
+             </layout>
             </item>
             <item>
              <widget class="QWidget" name="widget_3" native="true">
@@ -470,6 +500,63 @@
        <widget class="QWidget" name="page2">
         <layout class="QVBoxLayout" name="verticalLayout_33">
          <item>
+          <widget class="QWidget" name="widget_search_3" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_27">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_28">
+                <item>
+                 <spacer name="horizontalSpacer_8">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBox_2"/>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit_3"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_40">
+                <item>
+                 <widget class="QPushButton" name="pushButton_5">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_9">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_38">
            <item>
             <widget class="QScrollArea" name="scrollArea_5">
@@ -493,8 +580,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>666</width>
-                <height>608</height>
+                <width>574</width>
+                <height>567</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_26">
@@ -662,7 +749,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>525</width>
-                <height>587</height>
+                <height>546</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -894,8 +981,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>1175</width>
-              <height>644</height>
+              <width>1083</width>
+              <height>725</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">

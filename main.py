@@ -9,7 +9,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.stackedMenuItem.setCurrentIndex(0)
+        self.ui.stackedMenuItem.setCurrentIndex(2)
         self.ui.reset_all_list()
         
     def on_menu_nhap_clicked(self):
@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedMenuItem.setCurrentIndex(1)
         self.ui.reset_all_list()
 
-    def on_menu_thong_ke_clicked(self):
+    def on_menu_don_clicked(self):
         self.ui.stackedMenuItem.setCurrentIndex(2)
         self.ui.reset_all_list()
     

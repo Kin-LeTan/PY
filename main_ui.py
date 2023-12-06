@@ -10,16 +10,16 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import csv, copy
+from Menu_Goods import Goods
+from Menu_Invoice import Invoice
+from Menu_CheckOut import CheckOut
+
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1419, 824)
-
-        self.item_quantity_input_M1_array = {}
-        self.item_quantity_input_M2_array = {}
-        self.cart_quantity_input_M2_array = {}
 
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -28,27 +28,38 @@ class Ui_MainWindow(object):
         self.menu_icon.setObjectName("menu_icon")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.menu_icon)
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+
         self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.menu_nhap = QtWidgets.QPushButton(self.menu_icon)
+        self.menu_nhap = QtWidgets.QPushButton("Kho")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/newPrefix/images/Icons/Insert_goods.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.menu_nhap.setIcon(icon)
         self.menu_nhap.setObjectName("menu_nhap")
         self.verticalLayout_12.addWidget(self.menu_nhap)
-        self.menu_thanh_toan = QtWidgets.QPushButton(self.menu_icon)
+
+        self.menu_thanh_toan = QtWidgets.QPushButton("Thanh toán")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/newPrefix/images/Icons/Icon_checkOut.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.menu_thanh_toan.setIcon(icon1)
         self.menu_thanh_toan.setObjectName("menu_thanh_toan")
         self.verticalLayout_12.addWidget(self.menu_thanh_toan)
+
+        self.menu_don = QtWidgets.QPushButton("Đơn")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/newPrefix/images/Icons/Icon_order.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.menu_don.setIcon(icon1)
+        self.menu_don.setObjectName("menu_don")
+        self.verticalLayout_12.addWidget(self.menu_don)
+        
         self.verticalLayout_19 = QtWidgets.QVBoxLayout()
         self.verticalLayout_19.setObjectName("verticalLayout_19")
-        self.menu_thong_ke = QtWidgets.QPushButton(self.menu_icon)
+        self.menu_thong_ke = QtWidgets.QPushButton("Thống kê")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/newPrefix/images/Icons/Icon_order.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/newPrefix/images/Icons/Icon_chart.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.menu_thong_ke.setIcon(icon2)
         self.menu_thong_ke.setObjectName("menu_thong_ke")
         self.verticalLayout_19.addWidget(self.menu_thong_ke)
+
         spacerItem = QtWidgets.QSpacerItem(90, 25, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_19.addItem(spacerItem)
         self.exit = QtWidgets.QPushButton(self.menu_icon)
@@ -69,304 +80,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_20.setObjectName("verticalLayout_20")
         self.widget_search_2 = QtWidgets.QWidget(self.menu_layout)
         self.widget_search_2.setObjectName("widget_search_2")
-        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.widget_search_2)
-        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
-        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
-        self.horizontalLayout_25 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_25.addItem(spacerItem1)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.widget_search_2)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.horizontalLayout_25.addWidget(self.lineEdit_2)
-        self.horizontalLayout_24.addLayout(self.horizontalLayout_25)
-        self.horizontalLayout_26 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
-        self.pushButton_4 = QtWidgets.QPushButton(self.widget_search_2)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_26.addWidget(self.pushButton_4)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_26.addItem(spacerItem2)
-        self.horizontalLayout_24.addLayout(self.horizontalLayout_26)
-        self.horizontalLayout_19.addLayout(self.horizontalLayout_24)
+
+        
+
         self.verticalLayout_20.addWidget(self.widget_search_2)
         self.stackedMenuItem = QtWidgets.QStackedWidget(self.menu_layout)
         self.stackedMenuItem.setObjectName("stackedMenuItem")
-        self.page1 = QtWidgets.QWidget()
-        self.page1.setObjectName("page1")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.page1)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.scrollArea = QtWidgets.QScrollArea(self.page1)
-        self.scrollArea.setMinimumSize(QtCore.QSize(0, 0))
-        self.scrollArea.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1255, 537))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.layout_list_M1 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
-        self.layout_list_M1.setObjectName("layout_list_M1")
 
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.verticalLayout_3.addWidget(self.scrollArea)
-        self.widget = QtWidgets.QWidget(self.page1)
-        self.widget.setMinimumSize(QtCore.QSize(0, 110))
-        self.widget.setMaximumSize(QtCore.QSize(16777215, 110))
-        self.widget.setObjectName("widget")
-        self.horizontalLayout_28 = QtWidgets.QHBoxLayout(self.widget)
-        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
-        self.form_selectImage_M1 = QtWidgets.QPushButton(self.widget)
-        self.form_selectImage_M1.setMinimumSize(QtCore.QSize(100, 100))
-        self.form_selectImage_M1.setText("")
-        self.form_selectImage_M1.setObjectName("form_selectImage_M1")
-        self.horizontalLayout_28.addWidget(self.form_selectImage_M1)
-        self.widget_3 = QtWidgets.QWidget(self.widget)
-        self.widget_3.setMinimumSize(QtCore.QSize(120, 0))
-        self.widget_3.setObjectName("widget_3")
-        self.formLayout = QtWidgets.QFormLayout(self.widget_3)
-        self.formLayout.setObjectName("formLayout")
-        self.label_9 = QtWidgets.QLabel(self.widget_3)
-        self.label_9.setObjectName("label_9")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_9)
-        self.form_name_M1 = QtWidgets.QLineEdit(self.widget_3)
-        self.form_name_M1.setObjectName("form_name_M1")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.form_name_M1)
-        self.label_13 = QtWidgets.QLabel(self.widget_3)
-        self.label_13.setObjectName("label_13")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_13)
-        self.form_price_M1 = QtWidgets.QLineEdit(self.widget_3)
-        self.form_price_M1.setObjectName("form_price_M1")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.form_price_M1)
-        self.label_14 = QtWidgets.QLabel(self.widget_3)
-        self.label_14.setObjectName("label_14")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_14)
-        self.form_quantity_M1 = QtWidgets.QLineEdit(self.widget_3)
-        self.form_quantity_M1.setObjectName("form_quantity_M1")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.form_quantity_M1)
-        self.horizontalLayout_28.addWidget(self.widget_3)
-        spacerItem5 = QtWidgets.QSpacerItem(448, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_28.addItem(spacerItem5)
-        self.form_btn_add_M1 = QtWidgets.QPushButton(self.widget)
-        self.form_btn_add_M1.setMinimumSize(QtCore.QSize(0, 80))
-        self.form_btn_add_M1.setObjectName("form_btn_add_M1")
-        self.horizontalLayout_28.addWidget(self.form_btn_add_M1)
-        self.verticalLayout_3.addWidget(self.widget)
-        self.stackedMenuItem.addWidget(self.page1)
-        self.page2 = QtWidgets.QWidget()
-        self.page2.setObjectName("page2")
-        self.verticalLayout_33 = QtWidgets.QVBoxLayout(self.page2)
-        self.verticalLayout_33.setObjectName("verticalLayout_33")
-        self.horizontalLayout_38 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
-        self.scrollArea_5 = QtWidgets.QScrollArea(self.page2)
-        self.scrollArea_5.setMinimumSize(QtCore.QSize(0, 0))
-        self.scrollArea_5.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.scrollArea_5.setWidgetResizable(True)
-        self.scrollArea_5.setObjectName("scrollArea_5")
-        self.scrollAreaWidgetContents_5 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_5.setGeometry(QtCore.QRect(0, 0, 735, 557))
-        self.scrollAreaWidgetContents_5.setObjectName("scrollAreaWidgetContents_5")
-        self.layout_list_M2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_5)
-        self.layout_list_M2.setObjectName("layout_list_M2")
-        #
-        #
-        self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_5)
-        self.horizontalLayout_38.addWidget(self.scrollArea_5)
-        self.scrollArea_2 = QtWidgets.QScrollArea(self.page2)
-        self.scrollArea_2.setMinimumSize(QtCore.QSize(310, 0))
-        self.scrollArea_2.setMaximumSize(QtCore.QSize(450, 16777215))
-        self.scrollArea_2.setWidgetResizable(True)
-        self.scrollArea_2.setObjectName("scrollArea_2")
-        self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 308, 557))
-        self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
-        self.layout_carts_M2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
-        self.layout_carts_M2.setObjectName("layout_carts_M2")
-        # 
-        # 
-        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
-        self.horizontalLayout_38.addWidget(self.scrollArea_2)
-        self.verticalLayout_33.addLayout(self.horizontalLayout_38)
-        self.horizontalLayout_18 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_18.addItem(spacerItem9)
-        self.total_M2 = QtWidgets.QLabel(self.page2)
-        self.total_M2.setMinimumSize(QtCore.QSize(0, 33))
-        font = QtGui.QFont()
-        font.setPointSize(15)
-        font.setBold(False)
-        font.setWeight(50)
-        self.total_M2.setFont(font)
-        self.total_M2.setObjectName("total_M2")
-        self.horizontalLayout_18.addWidget(self.total_M2)
-        self.verticalLayout_33.addLayout(self.horizontalLayout_18)
-        self.horizontalLayout_39 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_39.setObjectName("horizontalLayout_39")
-        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_39.addItem(spacerItem10)
+        self.goods = Goods()
+        self.stackedMenuItem.addWidget(self.goods)
 
-        self.cart_btn_cancelAll_M2 = QtWidgets.QPushButton(self.page2)
-        self.cart_btn_cancelAll_M2.setObjectName("cart_btn_cancelAll_M2")
-        self.cart_btn_cancelAll_M2.clicked.connect(lambda: self.cancel_carts_M2())
-
-
-        self.horizontalLayout_39.addWidget(self.cart_btn_cancelAll_M2)
-        self.btn_checkOut_M2 = QtWidgets.QPushButton(self.page2)
-        self.btn_checkOut_M2.setMinimumSize(QtCore.QSize(200, 44))
-        self.btn_checkOut_M2.setObjectName("btn_checkOut_M2")
-        self.horizontalLayout_39.addWidget(self.btn_checkOut_M2)
-        self.verticalLayout_33.addLayout(self.horizontalLayout_39)
-        self.stackedMenuItem.addWidget(self.page2)
-
-        self.page3 = QtWidgets.QWidget()
-        self.page3.setObjectName("page3")
+        self.checkOut = CheckOut()
+        self.stackedMenuItem.addWidget(self.checkOut)
         
-
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.page3)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.scroll_order = QtWidgets.QScrollArea(self.page3)
-        self.scroll_order.setWidgetResizable(True)
-        self.scroll_order.setObjectName("scroll_order")
-        self.scroll_orderWidgetContents = QtWidgets.QWidget()
-        self.scroll_orderWidgetContents.setGeometry(QtCore.QRect(0, 0, 1255, 664))
-        self.scroll_orderWidgetContents.setObjectName("scroll_orderWidgetContents")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scroll_orderWidgetContents)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
-
-        self.line2 = QtWidgets.QFrame(self.scroll_orderWidgetContents)
-        self.line2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line2.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line2.setObjectName("line2")
-        self.verticalLayout_4.addWidget(self.line2)
-
-        self.item_M3 = QtWidgets.QWidget(self.scroll_orderWidgetContents)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.item_M3.sizePolicy().hasHeightForWidth())
-        self.item_M3.setSizePolicy(sizePolicy)
-        self.item_M3.setMinimumSize(QtCore.QSize(0, 200))
-        self.item_M3.setMaximumSize(QtCore.QSize(1678878, 220))
-        self.item_M3.setBaseSize(QtCore.QSize(0, 0))
-        self.item_M3.setObjectName("item_M3")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.item_M3)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.label_id_don_M3 = QtWidgets.QLabel(self.item_M3)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        self.label_id_don_M3.setFont(font)
-        self.label_id_don_M3.setObjectName("label_id_don_M3")
-        self.verticalLayout_5.addWidget(self.label_id_don_M3)
-        self.label_tiem_M3 = QtWidgets.QLabel(self.item_M3)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        self.label_tiem_M3.setFont(font)
-        self.label_tiem_M3.setObjectName("label_tiem_M3")
-        self.verticalLayout_5.addWidget(self.label_tiem_M3)
-        self.label_tong_hang_M3 = QtWidgets.QLabel(self.item_M3)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        self.label_tong_hang_M3.setFont(font)
-        self.label_tong_hang_M3.setObjectName("label_tong_hang_M3")
-        self.verticalLayout_5.addWidget(self.label_tong_hang_M3)
-        self.label_toal_M3 = QtWidgets.QLabel(self.item_M3)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setUnderline(False)
-        font.setWeight(50)
-        self.label_toal_M3.setFont(font)
-        self.label_toal_M3.setObjectName("label_toal_M3")
-        self.verticalLayout_5.addWidget(self.label_toal_M3)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_5)
-        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem11)
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.label_list = QtWidgets.QLabel(self.item_M3)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.label_list.setFont(font)
-        self.label_list.setObjectName("label_list")
-        self.verticalLayout_7.addWidget(self.label_list)
-        self.scroll_goods = QtWidgets.QScrollArea(self.item_M3)
-        self.scroll_goods.setMinimumSize(QtCore.QSize(700, 0))
-        self.scroll_goods.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.scroll_goods.setWidgetResizable(True)
-        self.scroll_goods.setObjectName("scroll_goods")
-        self.scroll_goodsWidgetContents = QtWidgets.QWidget()
-        self.scroll_goodsWidgetContents.setGeometry(QtCore.QRect(0, 0, 698, 166))
-        self.scroll_goodsWidgetContents.setObjectName("scroll_goodsWidgetContents")
-        self.verticalLayout_21 = QtWidgets.QVBoxLayout(self.scroll_goodsWidgetContents)
-        self.verticalLayout_21.setObjectName("verticalLayout_21")
-        self.item_goods_M3 = QtWidgets.QWidget(self.scroll_goodsWidgetContents)
-        self.item_goods_M3.setMinimumSize(QtCore.QSize(0, 83))
-        self.item_goods_M3.setMaximumSize(QtCore.QSize(16777215, 83))
-        self.item_goods_M3.setObjectName("item_goods_M3")
-        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.item_goods_M3)
-        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.label_img_M3 = QtWidgets.QLabel(self.item_goods_M3)
-        self.label_img_M3.setMinimumSize(QtCore.QSize(70, 0))
-        self.label_img_M3.setMaximumSize(QtCore.QSize(70, 16777215))
-        self.label_img_M3.setStyleSheet("image: url(:/newPrefix/images/Products/2.jpg);")
-        self.label_img_M3.setText("")
-        self.label_img_M3.setObjectName("label_img_M3")
-        self.horizontalLayout_11.addWidget(self.label_img_M3)
-        self.verticalLayout_25 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_25.setObjectName("verticalLayout_25")
-        self.label_name_goods_M3 = QtWidgets.QLabel(self.item_goods_M3)
-        self.label_name_goods_M3.setObjectName("label_name_goods_M3")
-        self.verticalLayout_25.addWidget(self.label_name_goods_M3)
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.label_gia_goods_M3 = QtWidgets.QLabel(self.item_goods_M3)
-        self.label_gia_goods_M3.setObjectName("label_gia_goods_M3")
-        self.horizontalLayout_9.addWidget(self.label_gia_goods_M3)
-        self.label_quantity_goods_M3 = QtWidgets.QLabel(self.item_goods_M3)
-        self.label_quantity_goods_M3.setObjectName("label_quantity_goods_M3")
-        self.horizontalLayout_9.addWidget(self.label_quantity_goods_M3)
-        self.label_tongTien_goods_M3 = QtWidgets.QLabel(self.item_goods_M3)
-        self.label_tongTien_goods_M3.setObjectName("label_tongTien_goods_M3")
-        self.horizontalLayout_9.addWidget(self.label_tongTien_goods_M3)
-        self.verticalLayout_25.addLayout(self.horizontalLayout_9)
-        self.horizontalLayout_11.addLayout(self.verticalLayout_25)
-        spacerItem12 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_11.addItem(spacerItem12)
-        self.verticalLayout_21.addWidget(self.item_goods_M3)
-        spacerItem13 = QtWidgets.QSpacerItem(20, 51, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_21.addItem(spacerItem13)
-        self.scroll_goods.setWidget(self.scroll_goodsWidgetContents)
-        self.verticalLayout_7.addWidget(self.scroll_goods)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_7)
-        self.verticalLayout_4.addWidget(self.item_M3)
-        self.line = QtWidgets.QFrame(self.scroll_orderWidgetContents)
-        self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
-        self.verticalLayout_4.addWidget(self.line)
-        spacerItem14 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-
-        self.verticalLayout_4.addItem(spacerItem14)
-        self.scroll_order.setWidget(self.scroll_orderWidgetContents)
-        self.horizontalLayout.addWidget(self.scroll_order)
-        self.stackedMenuItem.addWidget(self.page3)
+        self.invoice = Invoice()
+        self.stackedMenuItem.addWidget(self.invoice)
 
         self.verticalLayout_20.addWidget(self.stackedMenuItem)
         self.widget_25 = QtWidgets.QWidget(self.centralwidget)
@@ -392,425 +120,16 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.menu_nhap.setText(_translate("MainWindow", "Kho"))
-        self.menu_thanh_toan.setText(_translate("MainWindow", "Thanh toan"))
-        self.menu_thong_ke.setText(_translate("MainWindow", "Đơn"))
-        self.pushButton_4.setText(_translate("MainWindow", "PushButton"))
-        
-        self.label_9.setText(_translate("MainWindow", "Tên:"))
-        self.label_13.setText(_translate("MainWindow", "Giá:"))
-        self.label_14.setText(_translate("MainWindow", "Số lượng:"))
-        self.form_btn_add_M1.setText(_translate("MainWindow", "ADD"))
 
-        # self.cart_name_M2.setText(_translate("MainWindow", "Gói kẹo"))
-        # self.cart_id_M2.setText(_translate("MainWindow", "ID: IPD738"))
-        # self.cart_price_M2.setText(_translate("MainWindow", "Giá: 999.999.999 VNDf"))
-        # self.item_label_M1_4.setText(_translate("MainWindow", "Nhập số lượng:"))
-        # self.cart_btn_remove_M2.setText(_translate("MainWindow", "<<< REMOVE"))
-        # self.cart_btn_cancel_M2.setText(_translate("MainWindow", "CANCEL"))
-        # self.total_M2.setText(_translate("MainWindow", "TỐNG TIỀN: 999.999.999 VND"))
-        self.cart_btn_cancelAll_M2.setText(_translate("MainWindow", "HỦY TẤT CẢ GIỎ"))
-        self.btn_checkOut_M2.setText(_translate("MainWindow", "THANH TOÁN"))
-        self.label_id_don_M3.setText(_translate("MainWindow", "ID ĐƠN: 1"))
-        self.label_tiem_M3.setText(_translate("MainWindow", "THỜI GIAN ĐÃ TẠO: "))
-        self.label_tong_hang_M3.setText(_translate("MainWindow", "TỔNG MÓN HÀNG: 10"))
-        self.label_toal_M3.setText(_translate("MainWindow", "TỔNG TIỀN: 88,777,888 VND"))
-        self.label_list.setText(_translate("MainWindow", "DANH SÁCH CÁC MÓN HÀNG:"))
-        self.label_name_goods_M3.setText(_translate("MainWindow", "Tên: "))
-        self.label_gia_goods_M3.setText(_translate("MainWindow", "Giá: "))
-        self.label_quantity_goods_M3.setText(_translate("MainWindow", "Sô lượng: "))
-        self.label_tongTien_goods_M3.setText(_translate("MainWindow", "Tổng tiền: "))
-
-    def show_item_M1(self, id, img, name, price, quantity):
-        self.item_M1 = QtWidgets.QWidget(self.scrollAreaWidgetContents)
-        self.item_M1.setMinimumSize(QtCore.QSize(0, 0))
-        self.item_M1.setMaximumSize(QtCore.QSize(16777215, 130))
-        self.item_M1.setObjectName("item_M1")
-        self.horizontalLayout_29 = QtWidgets.QHBoxLayout(self.item_M1)
-        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
-        self.item_image_M1 = QtWidgets.QLabel(self.item_M1)
-        self.item_image_M1.setMinimumSize(QtCore.QSize(100, 100))
-        self.item_image_M1.setMaximumSize(QtCore.QSize(100, 100))
-        self.item_image_M1.setStyleSheet("image: url(:/newPrefix/images/Products/"+img+");") # ẢNH
-        self.item_image_M1.setText("")
-        self.item_image_M1.setObjectName("item_image_M1")
-        self.horizontalLayout_29.addWidget(self.item_image_M1)
-        self.widget_16 = QtWidgets.QWidget(self.item_M1)
-        self.widget_16.setObjectName("widget_16")
-        self.verticalLayout_23 = QtWidgets.QVBoxLayout(self.widget_16)
-        self.verticalLayout_23.setObjectName("verticalLayout_23")
-        self.item_name_M1 = QtWidgets.QLabel("Tên kho: "+name) # Tên
-        self.item_name_M1.setObjectName("item_name_M1")
-        self.verticalLayout_23.addWidget(self.item_name_M1)
-        self.item_id_M1 = QtWidgets.QLabel("Mã id: "+str(id)) # ID
-        self.item_id_M1.setObjectName("item_id_M1")
-        self.verticalLayout_23.addWidget(self.item_id_M1)
-        self.item_price_M1 = QtWidgets.QLabel("Giá: {:,.0f} VND".format(int(price)))# Giá
-        self.item_price_M1.setObjectName("item_price_M1")
-        self.verticalLayout_23.addWidget(self.item_price_M1)
-        self.item_quantity_RM_M1 = QtWidgets.QLabel("Số lượng còn: "+str(quantity))# Số lượng còn lại
-        self.item_quantity_RM_M1.setObjectName("item_quantity_RM_M1")
-        self.verticalLayout_23.addWidget(self.item_quantity_RM_M1)
-        self.horizontalLayout_29.addWidget(self.widget_16)
-        spacerItem3 = QtWidgets.QSpacerItem(448, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_29.addItem(spacerItem3)
-        self.widget_17 = QtWidgets.QWidget(self.item_M1)
-        self.widget_17.setMinimumSize(QtCore.QSize(250, 0))
-        self.widget_17.setObjectName("widget_17")
-        self.verticalLayout_24 = QtWidgets.QVBoxLayout(self.widget_17)
-        self.verticalLayout_24.setObjectName("verticalLayout_24")
-        self.horizontalLayout_30 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
-        self.item_label_M1 = QtWidgets.QLabel("Số lượng: ")
-        self.item_label_M1.setObjectName("item_label_M1")
-        self.horizontalLayout_30.addWidget(self.item_label_M1)
-
-        self.item_quantity_input_M1 = QtWidgets.QSpinBox(self.widget_17)
-        self.item_quantity_input_M1.setObjectName("item_quantity_input_M1")
-        self.item_quantity_input_M1_array[int(id)] = self.item_quantity_input_M1
-
-        self.horizontalLayout_30.addWidget(self.item_quantity_input_M1)
-        self.verticalLayout_24.addLayout(self.horizontalLayout_30)
-        self.horizontalLayout_31 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
-
-        self.item_btn_add_M1 = QtWidgets.QPushButton("Thêm vào kho")
-        self.item_btn_add_M1.setObjectName("item_btn_add_M1")
-
-        self.item_btn_add_M1.clicked.connect(lambda: self.update_quantity_M1(1, str(id), self.item_quantity_input_M1_array[int(id)].value()))
-
-        self.horizontalLayout_31.addWidget(self.item_btn_add_M1)
-
-        self.item_btn_barring_M1 = QtWidgets.QPushButton("Giảm trừ kho")
-        self.item_btn_barring_M1.setObjectName("item_btn_barring_M1")
-
-        self.item_btn_barring_M1.clicked.connect(lambda: self.update_quantity_M1(0, str(id), self.item_quantity_input_M1_array[int(id)].value()))
-
-        self.horizontalLayout_31.addWidget(self.item_btn_barring_M1)
-        self.verticalLayout_24.addLayout(self.horizontalLayout_31)
-        self.horizontalLayout_29.addWidget(self.widget_17)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.item_btn_edit_M1 = QtWidgets.QPushButton("Sửa thông tin")
-        self.item_btn_edit_M1.setObjectName("item_btn_edit_M1")
-        self.verticalLayout.addWidget(self.item_btn_edit_M1)
-        
-        self.item_btn_delete_M1 = QtWidgets.QPushButton("Xóa kho")
-        self.item_btn_delete_M1.setObjectName("item_btn_delete_M1")
-
-        self.item_btn_delete_M1.clicked.connect(lambda: self.delete_item_M1(str(id)))
-
-        self.verticalLayout.addWidget(self.item_btn_delete_M1)
-        self.horizontalLayout_29.addLayout(self.verticalLayout)
-        self.layout_list_M1.addWidget(self.item_M1)
-
-    def show_item_M2(self, id, img, name, price, quantity):
-        self.item_M2 = QtWidgets.QWidget(self.scrollAreaWidgetContents_5)
-        self.item_M2.setMinimumSize(QtCore.QSize(0, 0))
-        self.item_M2.setMaximumSize(QtCore.QSize(16777215, 130))
-        self.item_M2.setObjectName("item_M2")
-
-        self.horizontalLayout_32 = QtWidgets.QHBoxLayout(self.item_M2)
-        self.horizontalLayout_32.setObjectName("horizontalLayout_32")
-        self.item_image_M2 = QtWidgets.QLabel(self.item_M2)
-        self.item_image_M2.setMinimumSize(QtCore.QSize(100, 100))
-        self.item_image_M2.setMaximumSize(QtCore.QSize(100, 100))
-        self.item_image_M2.setStyleSheet("image: url(:/newPrefix/images/Products/"+img+");")
-        self.item_image_M2.setText("")
-        self.item_image_M2.setObjectName("item_image_M2")
-        self.horizontalLayout_32.addWidget(self.item_image_M2)
-        self.widget_20 = QtWidgets.QWidget(self.item_M2)
-        self.widget_20.setObjectName("widget_20")
-        self.verticalLayout_27 = QtWidgets.QVBoxLayout(self.widget_20)
-        self.verticalLayout_27.setObjectName("verticalLayout_27")
-        self.item_name_M2 = QtWidgets.QLabel("Tên kho: "+name)
-        self.item_name_M2.setObjectName("item_name_M2")
-        self.verticalLayout_27.addWidget(self.item_name_M2)
-        self.item_id_M2 = QtWidgets.QLabel("Mã id: "+str(id))
-        self.item_id_M2.setObjectName("item_id_M2")
-        self.verticalLayout_27.addWidget(self.item_id_M2)
-        self.item_price_M2 = QtWidgets.QLabel("Giá: {:,.0f} VND".format(int(price)))#giá
-        self.item_price_M2.setObjectName("item_price_M2")
-        self.verticalLayout_27.addWidget(self.item_price_M2)
-        self.item_quantity_RM_M2 = QtWidgets.QLabel("Số lượng còn: "+str(quantity))#Số lượng
-        self.item_quantity_RM_M2.setObjectName("item_quantity_RM_M2")
-        self.verticalLayout_27.addWidget(self.item_quantity_RM_M2)
-        self.horizontalLayout_32.addWidget(self.widget_20)
-        spacerItem6 = QtWidgets.QSpacerItem(448, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_32.addItem(spacerItem6)
-        self.widget_21 = QtWidgets.QWidget(self.item_M2)
-        self.widget_21.setMinimumSize(QtCore.QSize(250, 0))
-        self.widget_21.setObjectName("widget_21")
-        self.verticalLayout_28 = QtWidgets.QVBoxLayout(self.widget_21)
-        self.verticalLayout_28.setObjectName("verticalLayout_28")
-        self.horizontalLayout_33 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_33.setObjectName("horizontalLayout_33")
-        self.item_label_M2 = QtWidgets.QLabel("Nhập số lượng cần thanh toán:")
-        self.item_label_M2.setObjectName("item_label_M2")
-        self.horizontalLayout_33.addWidget(self.item_label_M2)
-
-        self.item_quantity_input_M2 = QtWidgets.QSpinBox(self.widget_21)
-        self.item_quantity_input_M2.setObjectName("item_quantity_input_M2")
-        self.item_quantity_input_M2.setRange(0, int(quantity))
-        self.item_quantity_input_M2_array[int(id)] = self.item_quantity_input_M2
-
-        self.horizontalLayout_33.addWidget(self.item_quantity_input_M2)
-        self.verticalLayout_28.addLayout(self.horizontalLayout_33)
-        self.horizontalLayout_34 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_34.setObjectName("horizontalLayout_34")
-
-        self.item_btn_add_M2 = QtWidgets.QPushButton("THÊM VÀO GIỎ >>")
-        self.item_btn_add_M2.setObjectName("item_btn_add_M2")
-        self.item_btn_add_M2.clicked.connect(lambda: self.transfer_quantity_M2(0, str(id), int(self.item_quantity_input_M2_array[int(id)].value())))
-
-        self.horizontalLayout_34.addWidget(self.item_btn_add_M2)
-        self.verticalLayout_28.addLayout(self.horizontalLayout_34)
-        self.horizontalLayout_32.addWidget(self.widget_21)
-        self.layout_list_M2.addWidget(self.item_M2)
-
-    def show_cart_M2(self, id, img, name, price, quantity):
-        self.cart = QtWidgets.QWidget(self.scrollAreaWidgetContents_2)
-        self.cart.setMinimumSize(QtCore.QSize(0, 0))
-        self.cart.setMaximumSize(QtCore.QSize(16777215, 230))
-        self.cart.setObjectName("cart")
-        self.verticalLayout_29 = QtWidgets.QVBoxLayout(self.cart)
-        self.verticalLayout_29.setObjectName("verticalLayout_29")
-        self.horizontalLayout_37 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_37.setObjectName("horizontalLayout_37")
-        self.cart_image_M2 = QtWidgets.QLabel(self.cart)
-        self.cart_image_M2.setMinimumSize(QtCore.QSize(100, 100))
-        self.cart_image_M2.setMaximumSize(QtCore.QSize(100, 100))
-        self.cart_image_M2.setStyleSheet("image: url(:/newPrefix/images/Products/"+img+");")
-        self.cart_image_M2.setText("")
-        self.cart_image_M2.setObjectName("cart_image_M2")
-        self.horizontalLayout_37.addWidget(self.cart_image_M2)
-        self.widget_22 = QtWidgets.QWidget(self.cart)
-        self.widget_22.setObjectName("widget_22")
-        self.verticalLayout_30 = QtWidgets.QVBoxLayout(self.widget_22)
-        self.verticalLayout_30.setObjectName("verticalLayout_30")
-        self.cart_name_M2 = QtWidgets.QLabel("Tên kho: "+name)
-        self.cart_name_M2.setObjectName("cart_name_M2")
-        self.verticalLayout_30.addWidget(self.cart_name_M2)
-        self.cart_id_M2 = QtWidgets.QLabel("Mã id: "+str(id))
-        self.cart_id_M2.setObjectName("cart_id_M2")
-        self.verticalLayout_30.addWidget(self.cart_id_M2)
-        self.cart_price_M2 = QtWidgets.QLabel("Giá: {:,.0f} VND".format(int(price)))
-        self.cart_price_M2.setObjectName("cart_price_M2")
-        self.verticalLayout_30.addWidget(self.cart_price_M2)
-        self.cart_quantity_M2 = QtWidgets.QLabel("Số lượng: "+str(quantity))
-        self.cart_quantity_M2.setObjectName("cart_quantity_M2")
-        self.verticalLayout_30.addWidget(self.cart_quantity_M2)
-        self.horizontalLayout_37.addWidget(self.widget_22)
-        self.verticalLayout_29.addLayout(self.horizontalLayout_37)
-        self.widget_23 = QtWidgets.QWidget(self.cart)
-        self.widget_23.setMinimumSize(QtCore.QSize(0, 0))
-        self.widget_23.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.widget_23.setObjectName("widget_23")
-        self.verticalLayout_32 = QtWidgets.QVBoxLayout(self.widget_23)
-        self.verticalLayout_32.setObjectName("verticalLayout_32")
-        self.horizontalLayout_35 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_35.setObjectName("horizontalLayout_35")
-        self.item_label_M1_4 = QtWidgets.QLabel("Nhập số lượng: ")
-        self.item_label_M1_4.setObjectName("item_label_M1_4")
-
-        self.horizontalLayout_35.addWidget(self.item_label_M1_4)
-        self.cart_quantity_input_M2 = QtWidgets.QSpinBox(self.widget_23)
-        self.cart_quantity_input_M2.setObjectName("cart_quantity_input_M2")
-        self.cart_quantity_input_M2.setRange(0, int(quantity))
-        self.cart_quantity_input_M2_array[int(id)] = self.cart_quantity_input_M2
-
-        self.horizontalLayout_35.addWidget(self.cart_quantity_input_M2)
-        self.verticalLayout_32.addLayout(self.horizontalLayout_35)
-        self.horizontalLayout_36 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_36.setObjectName("horizontalLayout_36")
-
-        self.cart_btn_remove_M2 = QtWidgets.QPushButton("<< TRỪ GIỎ")
-        self.cart_btn_remove_M2.setObjectName("cart_btn_remove_M2")
-        self.horizontalLayout_36.addWidget(self.cart_btn_remove_M2)
-        self.cart_btn_remove_M2.clicked.connect(lambda: self.transfer_quantity_M2(1, str(id), int(self.cart_quantity_input_M2_array[int(id)].value())))
-
-        self.cart_btn_cancel_M2 = QtWidgets.QPushButton("HỦY GIỎ")
-        self.cart_btn_cancel_M2.setObjectName("cart_btn_cancel_M2")
-        self.cart_btn_cancel_M2.clicked.connect(lambda: self.transfer_quantity_M2(1, str(id), int(quantity)))
-        self.horizontalLayout_36.addWidget(self.cart_btn_cancel_M2)
-
-        self.verticalLayout_32.addLayout(self.horizontalLayout_36)
-        self.verticalLayout_29.addWidget(self.widget_23)
-        self.layout_carts_M2.addWidget(self.cart)
-
-    #Từ trang Kho
-    def show_list_M1(self):
-        self.clear_layout(self.layout_list_M1)
-
-        with open('csv/kho.csv', 'r', encoding='utf-8') as file:
-            csv_reader = csv.DictReader(file)
-            sorted_rows = sorted(csv_reader, key=lambda x: int(x['id']))
-
-            for row in sorted_rows:
-                self.show_item_M1(row['id'], row['anh'], row['ten'], row['gia'], row['so_luong'])
-
-        self.end_item_M1()
-    def update_quantity_M1(self, type, id, quantity):
-        # Mở tệp CSV
-        with open('csv/kho.csv', 'r', encoding='utf-8') as file:
-            csv_reader = csv.DictReader(file)
-            sorted_rows = sorted(csv_reader, key=lambda x: int(x['id']))
-
-        # Tìm hàng có ID tương ứng và cập nhật cột "so_luong"
-        for row in sorted_rows:
-            if row['id'] == id:
-                current_quantity = int(row['so_luong'])
-                if type == 0:  # Giảm số lượng
-                    new_quantity = max(current_quantity - quantity, 0)
-                elif type == 1:  # Tăng số lượng
-                    new_quantity = current_quantity + quantity
-                else:
-                    raise ValueError("Invalid type. Must be 0 or 1.")
-                row['so_luong'] = str(new_quantity)
-
-        # Ghi lại dữ liệu vào tệp CSV
-        fieldnames = csv_reader.fieldnames
-        with open('csv/kho.csv', 'w', newline='', encoding='utf-8') as file:
-            writer = csv.DictWriter(file, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(sorted_rows)
-        self.reset_all_list()
-    def delete_item_M1(self, id):
-        rows = []
-        with open('csv/kho.csv', 'r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            fieldnames = reader.fieldnames
-            for row in reader:
-                if row['id'] != id:
-                    rows.append(row)
-
-        with open('csv/kho.csv', 'w', newline='', encoding='utf-8') as file:
-            writer = csv.DictWriter(file, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)
-
-        self.show_list_M1()  
-    def end_item_M1(self):
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.layout_list_M1.addItem(spacerItem4)
     
-    #Từ trang thanh toán
-    def show_list_M2(self):
-        self.clear_layout(self.layout_list_M2)
-
-        with open('csv/kho.csv', 'r', encoding='utf-8') as file:
-            csv_reader = csv.DictReader(file)
-            sorted_rows = sorted(csv_reader, key=lambda x: int(x['id']))
-
-            for row in sorted_rows:
-                self.show_item_M2(row['id'], row['anh'], row['ten'], row['gia'], row['so_luong'])
-
-        self.end_item_M2()
-    def show_carts_M2(self):
-        self.clear_layout(self.layout_carts_M2)
-
-        with open('csv/gio.csv', 'r', encoding='utf-8') as file:
-            csv_reader = csv.DictReader(file)
-            sorted_rows = sorted(csv_reader, key=lambda x: int(x['id']))
-
-            for row in sorted_rows:
-                self.show_cart_M2(row['id'], row['anh'], row['ten'], row['gia'], row['so_luong'])
-
-        self.end_cart_M2()
-    def transfer_quantity_M2(self, type, id, quantity):
-        if type == 0:
-            csv_1 = 'csv/kho.csv'
-            csv_2 = 'csv/gio.csv'
-        else:
-            csv_1 = 'csv/gio.csv'
-            csv_2 = 'csv/kho.csv'
-        if quantity > 0:
-            data_1 = []
-            with open(csv_1, 'r', encoding='utf-8') as file1:
-                reader1 = csv.DictReader(file1)
-                data_1 = list(reader1)
-
-            data_2 = []
-            with open(csv_2, 'r', encoding='utf-8') as file2:
-                reader2 = csv.DictReader(file2)
-                data_2 = list(reader2)
-
-            row_test = None
-
-            for row1 in data_1:
-                if row1['id'] == id:
-                    row1['so_luong'] = int(row1['so_luong']) - quantity
-
-                    row_test = copy.copy(row1)
-
-            exist_id = False
-            for row2 in data_2:
-                if row2['id'] == id:
-                    exist_id = True
-                    break
-            
-            if exist_id:
-                for row2 in data_2:
-                    if row2['id'] == id:
-                        row2['so_luong'] = int(row2['so_luong']) + quantity
-            else:
-                row_test['so_luong'] = quantity
-                data_2.append(row_test)
-
-            new_data1 = []
-            for row3 in data_1:
-                if type == 1:
-                    if int(row3['so_luong']) > 0:
-                        new_data1.append(row3)
-                else:
-                    new_data1.append(row3)
-                        
-            with open(csv_1, 'w', newline='', encoding='utf-8') as file1:
-                writer1 = csv.DictWriter(file1, fieldnames=reader1.fieldnames)
-                writer1.writeheader()
-                writer1.writerows(new_data1)
-
-            with open(csv_2, 'w', newline='', encoding='utf-8') as file2:
-                writer2 = csv.DictWriter(file2, fieldnames=reader2.fieldnames)
-                writer2.writeheader()
-                writer2.writerows(data_2)
-        self.reset_all_list()
-    def cancel_carts_M2(self):
-        with open('csv/gio.csv', 'r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            data = list(reader)
-        for row in data:
-            self.transfer_quantity_M2(1, row['id'], int(row['so_luong']))      
-    def end_item_M2(self):
-        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.layout_list_M2.addItem(spacerItem7)
-    def end_cart_M2(self):
-        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.layout_carts_M2.addItem(spacerItem8)
-    def show_total_M2(self):
-        total = 0
-        with open('csv/gio.csv', 'r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            data = list(reader)
-        for row in data:
-            total = total + (int(row['gia']) * int(row['so_luong']))
-        self.total_M2.setText("TỔNG TIỀN: {:,.0f} VND".format(int(total)))
-
-    #Xử lý khác
-    def clear_layout(self, layout):
-        while layout.count():
-            item = layout.takeAt(0)
-            widget = item.widget()
-            if widget is not None:
-                layout.removeWidget(widget)
-                widget.deleteLater()
     def reset_all_list(self):
-        self.show_list_M1()
-        self.show_list_M2()
-        self.show_carts_M2()
-        self.show_total_M2()
-    def test(self, t):
-        print(str(t))
-
+        
+        self.goods.show_list_M1()
+        self.checkOut.show_list_M2()
+        self.checkOut.show_carts_M2()
+        self.checkOut.show_total_M2()
+        self.invoice.show_invoice_M3()
+    
 import source_rc
 
 
