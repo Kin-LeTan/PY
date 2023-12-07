@@ -133,6 +133,7 @@ class Ui_MainWindow(object):
         self.checkOut.show_carts_M2()
         self.checkOut.show_total_M2()
         self.invoice.show_invoice_M3()
+        self.chart.update_chart_M4()
     
 import source_rc
 

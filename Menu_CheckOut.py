@@ -336,8 +336,8 @@ class CheckOut(QtWidgets.QWidget):
                 with open("csv/don.csv", "r",encoding='utf-8') as file:
                     reader_don = csv.DictReader(file)
                     for row in reader_don:
-                        if int(row['id']) > max_id_don:
-                            max_id_don = int(row['id'])
+                        if int(row['id_don']) > max_id_don:
+                            max_id_don = int(row['id_don'])
                 max_id_don = max_id_don + 1
 
                 max_id_ctd = -1

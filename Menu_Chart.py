@@ -15,13 +15,6 @@ class Chart(QtWidgets.QWidget):
         self.item_quantity_input_M1_array = {}
         layout = QtWidgets.QVBoxLayout(self)
 
-        self.df_time = pd.read_csv('csv/don.csv')
-        self.df_product = pd.read_csv('csv/chi_tiet_don.csv')
-        self.df_product['doanh_thu'] = self.df_product['gia'] * self.df_product['so_luong']
-        self.df_merged = pd.merge(self.df_product, self.df_time, on='id_don')
-        self.df_merged['thoi_gian'] = pd.to_datetime(self.df_merged['thoi_gian'])
-        self.df_merged['ngay'] = self.df_merged['thoi_gian'].dt.date
-
         self.page4 = QtWidgets.QWidget()
         self.page4.setObjectName("page")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.page4)
@@ -75,7 +68,7 @@ class Chart(QtWidgets.QWidget):
         self.comboBox_filter_M4.addItem("Tất cả")
         for item in kho_data:
             self.comboBox_filter_M4.addItem(item)
-        self.comboBox_filter_M4.currentIndexChanged.connect(self.update_chart)
+        self.comboBox_filter_M4.currentIndexChanged.connect(self.update_chart_M4)
 
         self.horizontalLayout_5.addWidget(self.comboBox_filter_M4)
         spacerItem18 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -115,8 +108,14 @@ class Chart(QtWidgets.QWidget):
         self.verticalLayout_10.addWidget(self.scrollArea_3)
 
         layout.addWidget(self.page4)
-        self.update_chart()
-    def update_chart(self):
+    def update_chart_M4(self):
+
+        self.df_time = pd.read_csv('csv/don.csv')
+        self.df_product = pd.read_csv('csv/chi_tiet_don.csv')
+        self.df_product['doanh_thu'] = self.df_product['gia'] * self.df_product['so_luong']
+        self.df_merged = pd.merge(self.df_product, self.df_time, on='id_don')
+        self.df_merged['thoi_gian'] = pd.to_datetime(self.df_merged['thoi_gian'])
+        self.df_merged['ngay'] = self.df_merged['thoi_gian'].dt.date
         selected_kho = self.comboBox_filter_M4.currentText()
 
         if selected_kho == "Tất cả":
