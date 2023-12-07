@@ -20,14 +20,14 @@ class Invoice(QtWidgets.QWidget):
         self.scroll_orderWidgetContents = QtWidgets.QWidget()
         self.scroll_orderWidgetContents.setGeometry(QtCore.QRect(0, 0, 1255, 664))
         self.scroll_orderWidgetContents.setObjectName("scroll_orderWidgetContents")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scroll_orderWidgetContents)
-        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.layout_invoice = QtWidgets.QVBoxLayout(self.scroll_orderWidgetContents)
+        self.layout_invoice.setObjectName("layout_invoice")
 
         self.line2 = QtWidgets.QFrame(self.scroll_orderWidgetContents)
         self.line2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line2.setObjectName("line2")
-        self.verticalLayout_4.addWidget(self.line2)
+        self.layout_invoice.addWidget(self.line2)
 
 
         self.scroll_order.setWidget(self.scroll_orderWidgetContents)
@@ -118,12 +118,12 @@ class Invoice(QtWidgets.QWidget):
         self.scroll_goods.setWidget(self.scroll_goodsWidgetContents)
         self.verticalLayout_7.addWidget(self.scroll_goods)
         self.horizontalLayout_2.addLayout(self.verticalLayout_7)
-        self.verticalLayout_4.addWidget(self.item_M3)
+        self.layout_invoice.addWidget(self.item_M3)
         self.line = QtWidgets.QFrame(self.scroll_orderWidgetContents)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
-        self.verticalLayout_4.addWidget(self.line)
+        self.layout_invoice.addWidget(self.line)
 
     def show_goods_M3(self, id_don, name, img, price, quantity, total):
         self.item_goods_M3 = QtWidgets.QWidget(self.scroll_goodsWidgetContents)
@@ -162,37 +162,38 @@ class Invoice(QtWidgets.QWidget):
         self.list_goods_items_array[int(id_don)].addWidget(self.item_goods_M3)
 
     def show_invoice_M3(self):
+        self.clear_layout(self.layout_invoice)
         with open('csv/don.csv', 'r', encoding='utf-8') as file:
             csv_reader = csv.DictReader(file)
-            sorted_rows_don = sorted(csv_reader, key=lambda x: -int(x['id']))
+            sorted_rows_don = sorted(csv_reader, key=lambda x: -int(x['id_don']))
 
         with open('csv/chi_tiet_don.csv', 'r', encoding='utf-8') as file:
             csv_reader = csv.DictReader(file)
             sorted_rows_ctd = sorted(csv_reader, key=lambda x: int(x['id']))
-
+        i = 0
         for row_don in sorted_rows_don:
-                
+            i = i + 1
             data_ctd = []
             total_price = 0
             total_goods = 0
             for row_ctd in sorted_rows_ctd:
-                if row_ctd['id_don'] == row_don['id']:
+                if row_ctd['id_don'] == row_don['id_don']:
                     data_ctd.append(row_ctd['id_kho'])
                     total_price = total_price + (int(row_ctd['gia']) * int(row_ctd['so_luong']))
                     total_goods = total_goods + int(row_ctd['so_luong'])
 
-            self.show_item_M3(row_don['id'], row_don['thoi_gian'], total_goods, total_price)
+            self.show_item_M3(row_don['id_don'], row_don['thoi_gian'] +"  ="+str(i), total_goods, total_price)
 
             for row_ctd in sorted_rows_ctd:
-                if row_ctd['id_don'] == row_don['id']:
-                    self.show_goods_M3(row_don['id'], row_ctd['ten'], row_ctd['anh'], row_ctd['gia'], row_ctd['so_luong'], (int(row_ctd['gia']) * int(row_ctd['so_luong'])))
+                if row_ctd['id_don'] == row_don['id_don']:
+                    self.show_goods_M3(row_don['id_don'], row_ctd['ten'], row_ctd['anh'], row_ctd['gia'], row_ctd['so_luong'], (int(row_ctd['gia']) * int(row_ctd['so_luong'])))
             
-            self.end_goods_M3(row_don['id'])
+            self.end_goods_M3(row_don['id_don'])
         self.end_item_M3()
 
     def end_item_M3(self):
         spacerItem14 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem14)
+        self.layout_invoice.addItem(spacerItem14)
 
     def end_goods_M3(self, id):
         spacerItem13 = QtWidgets.QSpacerItem(20, 51, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)

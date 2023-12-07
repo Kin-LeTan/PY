@@ -23,6 +23,10 @@ class MainWindow(QMainWindow):
     def on_menu_don_clicked(self):
         self.ui.stackedMenuItem.setCurrentIndex(2)
         self.ui.reset_all_list()
+
+    def on_menu_thong_ke_clicked(self):
+        self.ui.stackedMenuItem.setCurrentIndex(3)
+        self.ui.reset_all_list()
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)

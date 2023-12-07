@@ -13,6 +13,7 @@ import csv, copy
 from Menu_Goods import Goods
 from Menu_Invoice import Invoice
 from Menu_CheckOut import CheckOut
+from Menu_Chart import Chart
 
 
 
@@ -95,6 +96,9 @@ class Ui_MainWindow(object):
         
         self.invoice = Invoice()
         self.stackedMenuItem.addWidget(self.invoice)
+
+        self.chart = Chart()
+        self.stackedMenuItem.addWidget(self.chart)
 
         self.verticalLayout_20.addWidget(self.stackedMenuItem)
         self.widget_25 = QtWidgets.QWidget(self.centralwidget)
