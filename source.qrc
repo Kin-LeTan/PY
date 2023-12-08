@@ -18,5 +18,6 @@
     <file>images/Icons/Icon_checkOut.png</file>
     <file>images/Icons/Insert_goods.png</file>
     <file>images/Icons/Icon_order.png</file>
+    <file>images/Icons/Icon_search.png</file>
   </qresource>
 </RCC>

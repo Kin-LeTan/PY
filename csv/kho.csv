@@ -1,7 +1,7 @@
 id,ten,gia,so_luong,anh
-1,Nước suối giải khát Aquafina chai 500 ml,6000,6,1.jpg
+1,Nước suối giải khát Aquafina chai 500 ml,6000,8,1.jpg
 2,Trà ô long Tea Plus chai 455ml,12000,1,2.jpg
-3,Nước ngọt Revive bù khoáng chai 500ml,14000,19,3.jpg
+3,Nước ngọt Revive bù khoáng chai 500ml,14000,18,3.jpg
 4,Nước ngọt Revive chanh muối bù khoáng chai 500ml,13000,10,4.jpg
 5,Nước cam ép Twister Tropicana chai 455ml,13000,23,5.jpg
 6,Nước yến sào và đông trùng hạ thảo Green Bird chai 185ml,30000,16,6.jpg
@@ -10,3 +10,12 @@ id,ten,gia,so_luong,anh
 9,Nước ép lợi khuẩn Woongjin vị đào chai 340ml,26000,11,9.jpg
 10,Nước sương sáo Cap Panda Cin Cau lon 310ml,12000,4,10.jpg
 11,Nước trái vải Cap Panda Leci lon 310ml,11000,2,11.jpg
+12,Nước cam ép Minute Maid chai 500ml,15000,15,12.jpg
+13,Nước ngọt Pepsi chai 330ml,12000,20,13.jpg
+14,Nước suối Lavie chai 350ml,5000,25,14.jpg
+15,Trà trái cây Phuc Long chai 475ml,18000,7,15.jpg
+16,Nước dừa tươi Cocoxim lon 330ml,22000,12,16.jpg
+17,Nước suối Lavie trái cây chai 500ml,7000,9,17.jpg
+18,Nước cam ép Vinut chai 450ml,16000,14,18.jpg
+19,Nước ngọt Mirinda cam chai 330ml,11000,17,19.jpg
+20,Nước tăng lực Red Bull lon 250ml,25000,5,20.jpg
