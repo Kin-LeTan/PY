@@ -137,6 +137,6 @@ class Chart(QtWidgets.QWidget):
         # Hiển thị số trục y trên thanh bar
         for bar in bars:
             yval = bar.get_height()
-            self.ax.text(bar.get_x() + bar.get_width() / 2, yval, int(yval), ha='center', va='bottom')
+            self.ax.text(bar.get_x() + bar.get_width() / 2, yval, '{:,.0f} VND'.format(yval), ha='center', va='bottom')
 
         self.canvas.draw()
